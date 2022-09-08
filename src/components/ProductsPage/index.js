@@ -5,17 +5,24 @@ import jsonData from '../../data.json';
 
 function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
-  console.log('here!', products);
   const [search, setSearch] = useState('');
+  const [checked, setChecked] = useState(false);
 
   return (
     <div>
       <h1>IronStore</h1>
       <div>
-        <SearchBar products={products} search={search} setSearch={setSearch} />
+        <SearchBar
+          checked={checked}
+          search={search}
+          setSearch={setSearch}
+          setChecked={setChecked}
+        />
       </div>
       <div>
         <ProductTable
+          checked={checked}
+          setChecked={setChecked}
           products={products}
           setProducts={setProducts}
           search={search}

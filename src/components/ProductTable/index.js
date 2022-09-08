@@ -1,6 +1,6 @@
 import ProductRow from '../ProductRow';
 
-function ProductTable({ products, setProducts, search, setSearch }) {
+function ProductTable({ products, setProducts, search, setChecked, checked }) {
   return (
     <>
       <table>
@@ -11,6 +11,8 @@ function ProductTable({ products, setProducts, search, setSearch }) {
           </tr>
         </thead>
         <ProductRow
+          checked={checked}
+          setChecked={setChecked}
           products={products}
           setProducts={setProducts}
           search={search}
